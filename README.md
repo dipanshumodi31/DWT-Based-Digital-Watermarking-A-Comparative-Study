@@ -26,34 +26,110 @@ Watermarking in the **wavelet domain** offers improved robustness and impercepti
 
 ---
 
+
 ## 📸 Visualizations
 
 ### 📷 Original Image
 
-> The grayscale input image used for watermark embedding.
+> Input image used for watermarking.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/professional.jpg" alt="Original Image" width="200"/><br/>
+      <b>Original Image</b>
+    </td>
+  </tr>
+</table>
 
 ### 🔠 DWT Coefficients
 
-| **Type** | LL (cA) | HH Before | HH After |
-|---------|----------|------------|-----------|
-| Manual  | ✅       | ✅         | ✅        |
-| Built-in| ✅       | ✅         | ✅        |
+> LL (low-low), LH (low-high), HL (high-low), HH (high-high)
 
-### 🖼️ Watermarked Images
+- Manual
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/Manual_cA.jpg" alt="LL Band" width="200"/><br/>
+      <b>LL Sub-band</b>
+    </td>
+    <td align="center">
+      <img src="images/Manual_cH_before.jpg" alt="HH Before" width="200"/><br/>
+      <b>HH Before Watermark</b>
+    </td>
+    <td align="center">
+      <img src="images/Manual_cH_after.jpg" alt="HH After" width="200"/><br/>
+      <b>HH After Watermark</b>
+  </tr>
+</table>
 
-- Manual DWT
-- Built-in DWT
+- Built-in
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/Built-in_cA.jpg" alt="LL Band" width="200"/><br/>
+      <b>LL Sub-band</b>
+    </td>
+    <td align="center">
+      <img src="images/Built-in_cH_before.jpg" alt="HH Before" width="200"/><br/>
+      <b>HH Before Watermark</b>
+    </td>
+    <td align="center">
+      <img src="images/Built-in_cH_after.jpg" alt="HH After" width="200"/><br/>
+      <b>HH After Watermark</b>
+  </tr>
+</table>
 
-### 🔍 Difference Visualization
+- Spatial Image Differences
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/Original.jpg" alt="Original Image" width="200"/><br/>
+      <b>Original Image</b>
+    </td>
+    <td align="center">
+      <img src="images/Manual-Built_in_diff.jpg" alt="Manual vs Built-in Diff" width="200"/><br/>
+      <b>Manual vs Built-in Diff</b>
+    </td>
+  </tr>
+</table>
 
-- Original vs Manual DWT Watermarked
-- Original vs Built-in DWT Watermarked
-- Manual vs Built-in Watermarked
-- Subband difference heatmaps (cH before vs after)
+### 🖼️ Watermarked Image
 
----
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/Watermarked_Manual.jpg" alt="Watermarked Manual" width="200"/><br/>
+      <b>Watermarked Manual</b>
+    </td>
+    <td align="center">
+      <img src="images/Watermarked_Built-in.jpg" alt="Watermarked Built-in" width="200"/><br/>
+      <b>Watermarked Built-in</b>
+    </td>
+  </tr>
+</table>
 
-## 🔍 **Methodology**
+### 🔍 Difference Image & Heatmap
+
+> Shows pixel-level changes introduced by the watermark.
+
+<table>
+  <tr>
+    </td>
+    <td align="center">
+      <img src="images/Manual_cH_diff.jpg" alt="LH Difference" width="200"/><br/>
+      <b>Manual cH Diff</b>
+    </td>
+    </td>
+    <td align="center">
+      <img src="images/Built-in_cH_diff.jpg" alt="LH Difference" width="200"/><br/>
+      <b>Built-in cH Diff</b>
+    </td>
+    </td>
+  </tr>
+</table>
+
+---## 🔍 **Methodology**
 
 1. Load a grayscale image.
 2. Apply single-level Haar DWT (manual and built-in).
